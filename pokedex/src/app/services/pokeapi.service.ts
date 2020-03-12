@@ -31,7 +31,7 @@ export class PokeapiService {
           response.pokemon.forEach(pokemon =>{
             pokemon.number = this.getNumberFromUrl(pokemon.resource_uri);
           })
-          this.pokeList = this.sortPokemon(response.pokemon).filter(pokemon => pokemon.number < 1000);
+          this.pokeList = this.sortPokemon(response.pokemon).filter(pokemon => pokemon.number < 100);
         }
       )
   }
@@ -47,6 +47,5 @@ export class PokeapiService {
       return (a.number > b.number ? 1 : -1);
     })
   }
-
 
 }
